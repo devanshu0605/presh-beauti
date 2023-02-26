@@ -7,10 +7,42 @@
     font-weight: 300;
 
 }
-
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+@font-face {
+    font-family: 'ARSENICA-reg';
+    src: url(fonts/ARSENICATRIAL-REGULAR.TTF);
+}
+@font-face {
+    font-family: 'ARSENICA-bold';
+    src: url(fonts/ARSENICATRIAL-BOLD.TTF);
+}
+@font-face {
+    font-family: 'ARSENICA-demibold';
+    src: url(fonts/ARSENICATRIAL-DEMIBOLD.TTF);
+}
+@font-face {
+    font-family: 'ARSENICA-medium';
+    src: url(fonts/ARSENICATRIAL-MEDIUM.TTF);
+}
+@font-face {
+    font-family: 'NEXA-light';
+    src: url(fonts/NEXA-LIGHT.OTF);
+}
+@font-face {
+    font-family: 'NEXA-bold';
+    src: url(fonts/NEXA-BOLD.OTF);
+}
+@font-face {
+    font-family: 'NEXA-black';
+    src: url(fonts/NEXABLACK.OTF);
+}
+@font-face {
+    font-family: 'NEXA-bold2';
+    src: url(fonts/NEXABOLD.OTF);
+}
 nav{
     height: 6rem;
-    width: 100vw;
+     width: 100%;
     background-color: #f3aac1;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -25,14 +57,15 @@ nav{
     display: flex;
 }
 
-.logo{
+/* .logo{
     padding:1vh 1vw;
     text-align: center;
     width: 20%;
-}
+} */
 .logo img {
-    height: 5rem;
-    width: 5rem;
+    margin-top: 15px;
+    height: 5.6rem;
+    width: 4.5rem;
 }
 #mainimg{
     display: flex;
@@ -60,7 +93,7 @@ nav{
 .nav-links{
     display: flex;
     list-style: none; 
-    width: 1500px;
+    width: 100%;
     padding: 0 100px;
     
     align-items: center;
@@ -70,30 +103,45 @@ nav{
     display: flex;
     list-style: none; 
     color: white;
-    width: 40%;
+    width: 50%;
 }
 .nav-links2{
     display: flex;
     list-style: none; 
     color: white;
-    width: 40%;
+    width: 50%;
     justify-content: right;
 }
 .nav-links li a{
     text-decoration: none;
     margin: 0 0.7vw;
+    
 }
 .nav-links1 li a{
     text-decoration: none;
     margin: 0 0.7vw;
     color: white;
+    font-family: 'NEXA-light';
+    font-size: 15px; 
+}
+#bdiff{
+    font-family: 'NEXA-bold';
+}
+.nav-links2 li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+    font-family: 'NEXA-light';
+    font-size: 15px; 
 }
 .nav-links li a:hover {
     color: #000000;
 }
 .nav-links li {
+    padding: 0px 10px;
     position: relative;
 }
+
 .nav-links li a::before {
     content: "";
     display: block;
@@ -234,19 +282,7 @@ nav{
 }
 #pink{
     color: #fb83a7;
-    font-family: 'Abril Fatface', cursive;
-font-family: 'Grape Nuts', cursive;
-font-family: 'Island Moments', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Pacifico', cursive;
-font-family: 'Poor Story', cursive;
-font-family: 'Share Tech Mono', monospace;
-font-family: 'Ubuntu Condensed', sans-serif;
-font-family: 'Work Sans', sans-serif;
-font-family: 'Xanh Mono', monospace;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-family: 'Zen Antique Soft', serif;
+    font-family: 'ARSENICA-reg';
 }
 #black{
     padding-top: 200px;
@@ -285,22 +321,10 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 font-family: 'Zen Antique Soft', serif;
 }
 #pink2{
-
+    margin-top: 10px;
     font-size: 40px;
     color:#280d0d;
-    font-family: 'Abril Fatface', cursive;
-font-family: 'Grape Nuts', cursive;
-font-family: 'Island Moments', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Pacifico', cursive;
-font-family: 'Poor Story', cursive;
-font-family: 'Share Tech Mono', monospace;
-font-family: 'Ubuntu Condensed', sans-serif;
-font-family: 'Work Sans', sans-serif;
-font-family: 'Xanh Mono', monospace;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-family: 'Zen Antique Soft', serif;
+    font-family: 'NEXA-light';
 }
 .image{
     width: 32%;
@@ -570,10 +594,10 @@ footer .flex:last-child a:hover{
     }
 }
 
-#container {
+.container {
     border-radius: 10px;
-    width: 100px;
-    height: 100px;
+    width: 350px;
+    height: 450px;
     position: relative;
   }
   #navi,
@@ -597,18 +621,14 @@ footer .flex:last-child a:hover{
     border-radius: 20px;
 }  
 #know{
-    font: 1.2em "Fira Sans", sans-serif;
-font: italic 1.2em "Fira Sans", serif;
-font: italic small-caps bold 16px/2 cursive;
-font: small-caps bold 24px/1 sans-serif;
-font: caption;
+    font-family: 'ARSENICA-reg';
     padding-left: 40px;
     padding-top: 20px;
-color: #e14372;
+color: #e25881;
 font-size: 60px;
 }
 #abtus{
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'NEXA-light';
     padding-left: 40px;
 color: #f46a9d;
 font-size: 50px;
@@ -716,14 +736,13 @@ width: 45%;
 #welcome{
     margin-top: 275px;
     color: white;
-    font-family: 'Mynerve', cursive;
+    font-family: 'ARSENICA-reg';
     font-size: 60px;
 }
 #pb{
     color: white;
-
     font-size: 60px;
-    font-family: 'Lora', serif;
+    font-family: 'ARSENICA-reg';
 
 }
 #bdiff{
@@ -734,3 +753,376 @@ width: 45%;
     border: 2px solid white;
     width: 200px;
 }
+
+
+body {
+  margin: 0;
+
+  font-family: "Muli", sans-serif;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  margin: 1.5em;
+}
+
+/* img {
+  width: 100%;
+  height: 100%;
+} */
+
+.container1 {
+width: 100%;
+height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  animation: carouselAnim 5s infinite alternate linear;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  
+  background: #fff;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .items {
+    animation: carouselAnim 35s infinite alternate linear;
+  }
+  
+  @keyframes carouselAnim {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(calc(-100% + (2 * 300px)));
+    }
+  }
+}
+
+.entry p {
+  text-align: center;
+  padding: 1em;
+}
+
+.name {
+  font-weight: bold;
+}
+
+@keyframes carouselAnim {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(calc(-100% + (5 * 300px)));
+  }
+}
+
+.container1 .faders {
+  width: 90%;
+  position: absolute;
+  height: 100%;
+}
+
+
+.faders .left {
+    background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+  }
+  .faders .right {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 100%,
+      rgba(245, 245, 245, 1) 0%
+      
+    );
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+  }
+.right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+
+/* Login / Regsiter page  */
+
+/*6B5CFF*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap');
+
+:root {
+    --mainColor: #f3aac1;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+
+.wave {
+    position: fixed;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 100vw;
+    /* height: 100vh; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.img img {
+    width: 500px;
+
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    width: 360px;
+    text-transform: uppercase;
+}
+
+.avatar {
+    width: 100px;
+}
+
+form h2 {
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    margin: 15px 0;
+    color: #333;
+}
+
+.input-div {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px so lid #d9d9d9;
+    text-decoration: none;
+    outline: none;
+
+
+}
+
+.input-div:after,
+.input-div:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--mainColor);
+    transition: .3s;
+    outline: none;
+}
+
+.input-div:after {
+    right: 50%;
+}
+
+.input-div:before {
+    left: 50%;
+}
+
+.input-div.focus .i i {
+    color: var(--mainColor);
+}
+
+.input-div.focus div h5 {
+    top: -5px;
+    font-size: 10px;
+
+}
+
+.input-div.focus:after,
+.input-div.focus:before {
+    width: 50%;
+
+}
+
+.input-div.one {
+    margin-top: 0;
+}
+
+.input-div.two {
+    margin-bottom: 4px;
+}
+
+.i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i i {
+    color: #d9d9d9;
+    transition: .3s;
+}
+
+.input-div>div {
+    position: relative;
+    height: 45px;
+}
+
+.input-div>div h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: .3s;
+}
+
+
+.input {
+    position: absolute;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    transition: .3s;
+    margin: 20px;
+}
+
+a:hover {
+    color: var(--mainColor);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    background-color: var(--mainColor);
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+.btn:hover {
+    background-color: pink;
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        width: 290px;
+    }
+
+    .login-container h2 {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+
+    .img img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-color: var(--mainColor);
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .wave {
+        display: none;
+    }
+
+    .login-container {
+        justify-content: center;
+        color: var(--mainColor);
+    }
+
+    .form-login {
+        padding: 40px;
+        background-color: #fff;
+        width: 420px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 15px rgba(88, 34, 160, 0.2);
+    }
+}
+
+
+
+
+
