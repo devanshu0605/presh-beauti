@@ -44,7 +44,8 @@
 </head>
 
 <body class="min-h-screen bg-neutral-900 text-neutral-50">
-    <nav>
+    <nav data-aos="fade-down"
+    data-aos-duration="3000">
 
         <div class="hamburger">
             <div class="line1"></div>
@@ -73,22 +74,26 @@
 
 
 
-    <div id="mainimg">
+    <div id="mainimg" data-aos="fade-down"
+    data-aos-duration="3000">
         <!-- <img src="Images/mainimglt.png" alt="" srcset="" id="mainimg" data-aos="zoom-out"
     data-aos-duration="3000"> -->
         <div id="firstside"> </div>
         <div id="secondeside">
             <center>
-                <h1 id="welcome"> Welcome to </h1>
+                <h1 id="welcome" data-aos="fade-down"
+                data-aos-duration="3000"> Welcome to </h1>
             </center>
             <center>
-                <h1 id="pb"> PRESH BEAUTi</h1>
+                <h1 id="pb"  data-aos="fade-down"
+                data-aos-duration="2500"> PRESH BEAUTi</h1>
             </center>
             <center>
                 <hr id="hr1">
             </center>
             <center>
-                <h3 id="bdiff"> Be Different</h3>
+                <h3 id="bdiff" data-aos="fade-right"
+                data-aos-duration="3000"> Be Different</h3>
             </center>
         </div>
 
@@ -108,7 +113,7 @@
         </center>
         <br>
 
-        <div class="container1">
+        <!-- <div class="container1">
             <div class="faders">
                 <div class="left"></div>
                 <div class="right"></div>
@@ -138,7 +143,41 @@
 
 
             </div>
-        </div>
+        </div> -->
+        <section class="slider">
+            <button class="slider__control prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider__control next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider__container" data-multislide="true" data-step="4">
+              <div class="slider__item">
+                <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (1).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (2).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36.jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (1).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (2).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36.jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (1).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36 (2).jpeg" alt="" width="100%">
+              </div>
+              <div class="slider__item">
+                  <img src="Images/WhatsApp Image 2023-02-03 at 18.13.36.jpeg" alt="" width="100%">
+              </div>
+             
+            </div>
+          </section>
         <br>
         <div id="shopcol">
 
@@ -243,6 +282,87 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        const sliders = [...document.querySelectorAll(".slider__container")];
+const sliderControlPrev = [...document.querySelectorAll(".slider__control.prev")];
+const sliderControlNext = [...document.querySelectorAll(".slider__control.next")];
+
+sliders.forEach((slider, i) => {
+  let isDragStart = false,
+      isDragging = false,
+      isSlide = false,
+      prevPageX,
+      prevScrollLeft,
+      positionDiff;
+
+  const sliderItem = slider.querySelector(".slider__item");
+  var isMultislide = (slider.dataset.multislide === 'true');
+
+  sliderControlPrev[i].addEventListener('click', () => {
+    if (isSlide) return;
+    isSlide = true;
+    let slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+    slider.scrollLeft += -slideWidth;
+    setTimeout(function(){ isSlide = false; }, 700);
+  });
+
+  sliderControlNext[i].addEventListener('click', () => {
+    if (isSlide) return;
+    isSlide = true;
+    let slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth ;
+    slider.scrollLeft += slideWidth;
+    setTimeout(function(){ isSlide = false; }, 700);
+  });
+
+  function autoSlide() {
+    if(slider.scrollLeft - (slider.scrollWidth - slider.clientWidth) > -1 || slider.scrollLeft <= 0) return;
+    positionDiff = Math.abs(positionDiff);
+    let slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+    let valDifference = slideWidth - positionDiff;
+    if(slider.scrollLeft > prevScrollLeft) {
+        return slider.scrollLeft += positionDiff > slideWidth / 5 ? valDifference : -positionDiff;
+    }
+    slider.scrollLeft -= positionDiff > slideWidth / 5 ? valDifference : -positionDiff;
+  }
+
+  function dragStart(e) {
+    if (isSlide) return;
+    isSlide = true;
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = slider.scrollLeft;
+    setTimeout(function(){ isSlide = false; }, 700);
+  }
+
+  function dragging(e) {
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    slider.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    slider.scrollLeft = prevScrollLeft - positionDiff;
+  }
+
+  function dragStop() {
+    isDragStart = false;
+    slider.classList.remove("dragging");
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+  }
+
+  addEventListener("resize", autoSlide);
+  slider.addEventListener("mousedown", dragStart);
+  slider.addEventListener("touchstart", dragStart);
+  slider.addEventListener("mousemove", dragging);
+  slider.addEventListener("touchmove", dragging);
+  slider.addEventListener("mouseup", dragStop);
+  slider.addEventListener("touchend", dragStop);
+  slider.addEventListener("mouseleave", dragStop);
+});
+
+
     </script>
 </body>
 
